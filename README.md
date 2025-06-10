@@ -8,3 +8,6 @@ using viewsets for register login and getting a book by its author was complex a
 with a nested serializer we can access a list of author's book
 jwt is used for auth
 passwords are hashed and not raw in data base when registering
+
+test
+test
