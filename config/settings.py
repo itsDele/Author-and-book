@@ -30,12 +30,7 @@ ALLOWED_HOSTS = []
 AUTH_USER_MODEL = "authors.Author"
 
 # Application definition
-REST_FRAMEWORK = {
-    "DEFAULT_FILTER_BACKENDS": ("django_filters.rest_framework.DjangoFilterBackend",),
-    "DEFAULT_AUTHENTICATION_CLASSES": [
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
-    ],
-}
+
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -47,7 +42,6 @@ INSTALLED_APPS = [
     "book",
     "authors",
     "rest_framework",
-    "django_filters",
     "rest_framework_simplejwt",
 ]
 
