@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate
 from rest_framework import serializers
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from .models import Author
+from .models import Author,Notifications
 from book.models import Book
 
 
@@ -30,6 +30,7 @@ class AuthorSerializer(serializers.ModelSerializer):
             "gender",
             "password",
             "Book_author",
+            "favorite_authors"
         ]
 
     def create(self, validated_data):
@@ -81,3 +82,8 @@ class loginserializers(serializers.Serializer):
             "access token": access_token,
             "refresh token": refresh_token,
         }
+
+class NotificationSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Notifications
+        fields = ['id', 'message', 'is_read', 'created_at']
