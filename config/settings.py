@@ -34,7 +34,12 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ],
+    'DEFAULT_RENDERER_CLASSES': [
+        'rest_framework.renderers.JSONRenderer',
+        'rest_framework.renderers.BrowsableAPIRenderer',  # For web testing
+    ],
 }
+
 
 INSTALLED_APPS = [
     "django.contrib.admin",
@@ -47,6 +52,7 @@ INSTALLED_APPS = [
     "authors",
     "rest_framework",
     "rest_framework_simplejwt",
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
